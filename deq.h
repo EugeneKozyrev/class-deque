@@ -1,15 +1,12 @@
-#define SIZE (8)
 class Deque{
     private:
         struct Node {
-            char item[SIZE];
+            int item;
             Node *next;
             Node *prev;
  
-            Node( char* i, Node *n = NULL, Node *l = NULL) {
-                for (int idx = 0; idx < SIZE; idx++){
-                    item[idx] = i[idx];
-                }
+            Node( int i, Node *n = NULL, Node *l = NULL) {
+                item = i;
                 next = n;
                 prev = l;
             }
@@ -22,12 +19,12 @@ class Deque{
     public:
         Deque();
         ~Deque();
-        char* Head() const;
-        char* Tail() const;
-        void push_front(char* item);
-        void push_back(char* item);
-        char* pop_front();
-        char* pop_back();
+        int Head() const;
+        int Tail() const;
+        void push_front(int item);
+        void push_back(int item);
+        int pop_front();
+        int pop_back();
         void printCount();
         void printFront();
         void printBack();

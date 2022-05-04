@@ -15,17 +15,17 @@ Deque::~Deque() {
 }
  
 // Вывести голову дека
-char* Deque::Head() const {
+int Deque::Head() const {
     return first->item;
 }
  
 // Вывести хвост дека
-char* Deque::Tail() const {
+int Deque::Tail() const {
     return last->item;
 }
 
 // Добавить элемент в начало дека
-void Deque::push_front(char* item) {
+void Deque::push_front(int item) {
     Node *newNode = new Node(item, first);
     if(first == NULL){
         last = newNode;
@@ -38,7 +38,7 @@ void Deque::push_front(char* item) {
 }
  
 // Добавить элемент в конец дека
-void Deque::push_back(char* item) {
+void Deque::push_back(int item) {
     Node *newNode = new Node(item, NULL, last);
     if(last){
         first = newNode;
@@ -52,9 +52,9 @@ void Deque::push_back(char* item) {
 }
  
 // Удалить элемент из начала дека
-char* Deque::pop_front() {
+int Deque::pop_front() {
     Node *current = first;
-    char* res = first->item;
+    int res = first->item;
     first = first->next;
     if(first){
         first->prev = NULL;
@@ -65,9 +65,9 @@ char* Deque::pop_front() {
 }
  
 // Удалить элемент из конца дека
-char* Deque::pop_back() {
+int Deque::pop_back() {
     Node *current = last;
-    char* res = last->item;
+    int res = last->item;
     last = last->prev;
     if(last){
         last->next = NULL;
