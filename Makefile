@@ -1,5 +1,9 @@
-build:
-	g++ source.cpp deq.cpp -o source.exe
+server:
+	g++ -lws2_32 -o server server.cpp 
+
+client:
+	g++ -lws2_32 -o client client.cpp
 
 clean:
-	-rm "source.exe"
+	-rm "server.exe"
+	-rm "client.exe"
